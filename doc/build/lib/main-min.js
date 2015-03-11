@@ -1,1 +1,0 @@
-KISSY.add("kg/tabs/1.0.0/lib/main",["node","base"],function(n,a,e,i){var t=(a("node").all,a("base"));i.exports=t.extend({initializer:function(){}},{ATTRS:{}})});
