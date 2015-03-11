@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>tabs</title>
+    <link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com-prettify.css">
+    <link rel="stylesheet" href="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com.css">
+    <script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.8/seed-min.js" data-config="{combine:true}"></script>
+  </head>
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+    <div id="header"><a href="http://docs.kissyui.com/" class="logo">kissy</a>
+      <nav><a href="http://docs.kissyui.com/1.4/docs/html/coms.html">优秀组件推荐</a></nav>
+    </div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3 bs-docs-sidebar">
+          <ul data-spy="affix" data-offset-top="0" class="nav nav-list bs-docs-sidenav"></ul>
+        </div>
+        <div class="span9 bs-docs-content">
+          <h1 data-id="undefined" class="title">tabs</h1>
+          <p class="author-wrapper"><span>组件有问题？旺旺联系作者：</span>
+          </p>
+          <div class="common-link"><a href="../demo/index.html" target="_blank" class="demo">示例</a><a href="https://github.com/kissygalleryteam/tabs" target="_blank" class="source">源码</a></div>
+          <p class="com-info"><span class="info-label">View</span><span data-com="tabs" class="J_View"></span></p>
+          <p class="com-info"><span class="info-label">kissy版本</span><span>1.4.X</span>
+          </p><h2 id="-">综述</h2>
+<p>Tabs。</p>
+<p><img src="http://gtms02.alicdn.com/tps/i2/TB1DApgHXXXXXbOXXXXFvIM3VXX-434-180.png" alt="http://gtms02.alicdn.com/tps/i2/TB1DApgHXXXXXbOXXXXFvIM3VXX-434-180.png"></p>
+<h2 id="-">初始化组件</h2>
+<pre><code>//皮肤文件建议直接拿源码的less文件根据自己业务定制化使用    
+S.use(&#39;kg/tabs/1.0.0/,kg/tabs/1.0.0/index.css&#39;, function (S, Tabs) {
+    var tabs = new Tabs({
+        $target: &#39;#J_Tab&#39;
+    });
+});
+</code></pre><h2 id="api-">API说明</h2>
+<h3 id="-">属性</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">默认值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$target</td>
+<td style="text-align:left">String/NodeList</td>
+<td style="text-align:left">&#39;&#39;</td>
+<td style="text-align:left">容器</td>
+</tr>
+<tr>
+<td style="text-align:left">event</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left"><code>click</code></td>
+<td style="text-align:left">响应的事件类型，可设置为<code>click</code>、<code>hover</code>，移动端自动设置为<code>tap</code></td>
+</tr>
+<tr>
+<td style="text-align:left">effect</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left"><code>none</code></td>
+<td style="text-align:left">内容区域切换效果，可设置为<code>none</code>、<code>fade</code>、<code>slide</code></td>
+</tr>
+<tr>
+<td style="text-align:left">effectSpeed</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">500</td>
+<td style="text-align:left">内容区域切换效果的速度，单位为毫秒(ms)</td>
+</tr>
+<tr>
+<td style="text-align:left">delay</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">可变</td>
+<td style="text-align:left">事件的延时，单位为毫秒(ms)，<code>click</code>默认为0，<code>hover</code>默认为200</td>
+</tr>
+<tr>
+<td style="text-align:left">exec</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">延迟加载的内容是否支持脚本执行，具体参考<code>lazyload</code>组件</td>
+</tr>
+<tr>
+<td style="text-align:left">scrollOffset</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">通过Hash定位Tab索引时Tab导航顶部与浏览器顶部的高度差</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-">方法</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">返回值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">render</td>
+<td style="text-align:left">/</td>
+<td style="text-align:left">Tabs本身</td>
+<td style="text-align:left">渲染UI，支持链式</td>
+</tr>
+<tr>
+<td style="text-align:left">goto</td>
+<td style="text-align:left">index</td>
+<td style="text-align:left">Tabs本身</td>
+<td style="text-align:left">切换到第index个Tab，index从<strong>0</strong>开始</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-">事件</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">switch:before</td>
+<td style="text-align:left">{node: $this, panel: $pannel, index: index}</td>
+<td style="text-align:left">node:当前导航节点，panel:当前内容节点,index:当前索引(从0开始)</td>
+</tr>
+<tr>
+<td style="text-align:left">switch:after</td>
+<td style="text-align:left">{node: $this, panel: $pannel, index: index}</td>
+<td style="text-align:left">node:当前导航节点，panel:当前内容节点,index:当前索引(从0开始)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hash-tab">Hash定位Tab</h3>
+<p>通过在URL中添加Hash的方式可以轻松定位到某个Tab，即选中某个Tab，Hash的格式为<code>#id@index</code></p>
+<p>举个栗子：</p>
+<p>需要页面进来直接定位到<code>$target</code>为<code>#J_Tab</code>的第三个Tab上，那么在页面URL后添加<code>#J_Tab@2</code>的Hash即可轻松完成定位</p>
+<h3 id="-">注意:</h3>
+<ul>
+<li><code>switch:before</code>如果返回<code>false</code>，则会阻止此次切换。注意，一定要是<code>false</code>而不能是与<code>false</code>等价的其他值</li>
+<li>为防止css命名冲突，组件会在<code>$target</code>节点添加<code>kg-tabs</code>的className，自定义样式建议添加<code>.kg-tabs</code>的命名空间</li>
+</ul>
+
+          <div style="display:none;"><script type="text/javascript" src="http://tajs.qq.com/stats?sId=36378479" charset="UTF-8"></script></div>
+          <script src="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com.js"></script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
