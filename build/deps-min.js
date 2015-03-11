@@ -1,0 +1,1 @@
+KISSY.config("requires",{"kg/tabs/1.0.0/index":["node","base","ua","uri","kg/datalazyload/2.0.2/"],"kg/tabs/1.0.0/lib/main":["node","base"],"kg/tabs/1.0.0/plugins/navFixed/navFixed":["node","base","kg/limitfixed/2.0.0/"]});
